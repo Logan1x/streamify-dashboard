@@ -51,8 +51,7 @@
 - recharts
 
 ## Demo
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/e48c3e6d99d246c98a19ff4415361fe8?sid=6fd4e2ca-318d-4222-9965-595184e6c457" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+https://github.com/user-attachments/assets/783669f7-7087-4c73-86f4-8623e6974f44
 
 ## License
 
