@@ -1,5 +1,7 @@
 # Streamify : A music streaming analytics platform
 
+**Demo Link**: https://streamify-dashboard-puce.vercel.app/
+
 ## Local Installation
 
 1. Clone the repository
