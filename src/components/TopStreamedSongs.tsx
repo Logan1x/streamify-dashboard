@@ -34,9 +34,10 @@ const TopStreamedSongs: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await apiService.getTop5StreamedSongs();
+        const response =
+          (await apiService.getTop5StreamedSongs()) as SongData[];
         setData(response);
-      } catch (err) {
+      } catch {
         setError("Failed to load top-streamed songs.");
       }
     };
@@ -72,7 +73,7 @@ const TopStreamedSongs: React.FC = () => {
               fill="var(--color-streamCount)"
               radius={4}
             >
-              {data.map((entry, index) => (
+              {data.map((_, index) => (
                 <Cell
                   key={`cell-${index}`}
                   fill={COLORS[index % COLORS.length]}

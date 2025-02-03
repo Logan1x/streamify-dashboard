@@ -35,9 +35,9 @@ const UserGrowthChart: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await apiService.getUserGrowthData();
+        const response = (await apiService.getUserGrowthData()) as GrowthData[];
         setData(response);
-      } catch (err) {
+      } catch {
         setError("Failed to load user growth data.");
       }
     };

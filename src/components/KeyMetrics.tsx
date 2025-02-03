@@ -19,9 +19,9 @@ const KeyMetrics: React.FC = () => {
   useEffect(() => {
     const fetchMetrics = async () => {
       try {
-        const data = await apiService.getKeyMetrics();
+        const data: Metrics = (await apiService.getKeyMetrics()) as Metrics;
         setMetrics(data);
-      } catch (err) {
+      } catch {
         setError("Failed to load key metrics.");
       }
     };

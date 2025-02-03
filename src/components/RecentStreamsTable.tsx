@@ -32,10 +32,10 @@ const RecentStreamsTable: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await apiService.getRecentStreams();
+        const response = (await apiService.getRecentStreams()) as StreamData[];
         setData(response);
         setFilteredData(response);
-      } catch (err) {
+      } catch {
         console.error("Failed to load recent streams.");
       }
     };

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import apiService from "../services/apiService";
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Cell, Tooltip } from "recharts";
 import { ChartContainer, ChartConfig } from "@/components/ui/chart";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
@@ -47,9 +47,11 @@ const RevenueDistribution: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await apiService.getRevenueDistribution();
+        const response = (await apiService.getRevenueDistribution()) as {
+          revenueSources: RevenueSource[];
+        };
         setData(response.revenueSources);
-      } catch (err) {
+      } catch {
         setError("Failed to load revenue distribution data.");
       }
     };
@@ -85,7 +87,7 @@ const RevenueDistribution: React.FC = () => {
               outerRadius={120}
               label
             >
-              {data.map((entry, index) => (
+              {data.map((_, index) => (
                 <Cell
                   key={`cell-${index}`}
                   fill={COLORS[index % COLORS.length]}
