@@ -46,48 +46,48 @@ const KeyMetrics: React.FC = () => {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-4 p-4">
+    <div className="grid grid-cols-2 gap-4 lg:p-4">
       <Card>
         <CardHeader>
-          <CardTitle>Total Users</CardTitle>
+          <CardTitle className="text-lg">Total Users</CardTitle>
         </CardHeader>
-        <CardContent className="text-2xl font-semibold">
+        <CardContent className="text-lg lg:text-2xl font-semibold">
           {metrics.totalUsers}
         </CardContent>
       </Card>
 
       <Card>
         <CardHeader>
-          <CardTitle>Active Users</CardTitle>
+          <CardTitle className="text-lg">Active Users</CardTitle>
         </CardHeader>
-        <CardContent className="text-2xl font-semibold">
+        <CardContent className="text-lg lg:text-2xl font-semibold">
           {metrics.activeUsers}
         </CardContent>
       </Card>
 
       <Card>
         <CardHeader>
-          <CardTitle>Total Streams</CardTitle>
+          <CardTitle className="text-lg">Total Streams</CardTitle>
         </CardHeader>
-        <CardContent className="text-2xl font-semibold">
+        <CardContent className="text-lg lg:text-2xl font-semibold">
           {metrics.totalStreams}
         </CardContent>
       </Card>
 
       <Card>
         <CardHeader>
-          <CardTitle>Revenue</CardTitle>
+          <CardTitle className="text-lg">Revenue</CardTitle>
         </CardHeader>
-        <CardContent className="text-2xl font-semibold">
+        <CardContent className="text-lg lg:text-2xl font-semibold">
           ${metrics.revenue.toFixed(2)}
         </CardContent>
       </Card>
 
       <Card className="col-span-2">
         <CardHeader>
-          <CardTitle>Top Artist</CardTitle>
+          <CardTitle className="text-lg">Top Artist</CardTitle>
         </CardHeader>
-        <CardContent className="text-2xl font-semibold">
+        <CardContent className="text-lg lg:text-2xl font-semibold">
           {metrics.topArtist}
         </CardContent>
       </Card>

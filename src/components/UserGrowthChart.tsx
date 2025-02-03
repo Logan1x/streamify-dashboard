@@ -6,7 +6,7 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  ResponsiveContainer,
+  CartesianGrid,
 } from "recharts";
 import { ChartContainer, ChartConfig } from "@/components/ui/chart";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
@@ -54,33 +54,35 @@ const UserGrowthChart: React.FC = () => {
   }
 
   return (
-    <Card>
+    <Card className="">
       <CardHeader>
         <CardTitle>User Growth (Last 12 Months)</CardTitle>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig} className="min-h-[300px] w-full">
-          <ResponsiveContainer width="100%" height={300}>
-            <LineChart data={data}>
-              <XAxis dataKey="month" />
-              <YAxis />
-              <Tooltip />
-              <Line
-                type="monotone"
-                dataKey="totalUsers"
-                stroke="var(--color-totalUsers)"
-                strokeWidth={2}
-                dot={false}
-              />
-              <Line
-                type="monotone"
-                dataKey="activeUsers"
-                stroke="var(--color-activeUsers)"
-                strokeWidth={2}
-                dot={false}
-              />
-            </LineChart>
-          </ResponsiveContainer>
+        <ChartContainer
+          config={chartConfig}
+          className="md:h-[300px] w-full min-h-[200px]"
+        >
+          <LineChart data={data}>
+            <CartesianGrid />
+            <XAxis dataKey="month" />
+            <YAxis />
+            <Tooltip />
+            <Line
+              type="monotone"
+              dataKey="totalUsers"
+              stroke="var(--color-totalUsers)"
+              strokeWidth={2}
+              dot={false}
+            />
+            <Line
+              type="monotone"
+              dataKey="activeUsers"
+              stroke="var(--color-activeUsers)"
+              strokeWidth={2}
+              dot={false}
+            />
+          </LineChart>
         </ChartContainer>
       </CardContent>
     </Card>

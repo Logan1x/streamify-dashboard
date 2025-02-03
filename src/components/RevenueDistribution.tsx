@@ -48,33 +48,34 @@ const RevenueDistribution: React.FC = () => {
   }
 
   return (
-    <Card>
+    <Card className="h-full">
       <CardHeader>
         <CardTitle>Revenue Distribution</CardTitle>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig} className="min-h-[300px] w-full">
-          <ResponsiveContainer width="100%" height={300}>
-            <PieChart>
-              <Pie
-                data={data}
-                dataKey="amount"
-                nameKey="source"
-                cx="50%"
-                cy="50%"
-                outerRadius={120}
-                label
-              >
-                {data.map((entry, index) => (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={COLORS[index % COLORS.length]}
-                  />
-                ))}
-              </Pie>
-              <Tooltip />
-            </PieChart>
-          </ResponsiveContainer>
+        <ChartContainer
+          config={chartConfig}
+          className="h-[300px] min-h-[200px] w-full"
+        >
+          <PieChart>
+            <Pie
+              data={data}
+              dataKey="amount"
+              nameKey="source"
+              cx="50%"
+              cy="50%"
+              outerRadius={120}
+              label
+            >
+              {data.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
+              ))}
+            </Pie>
+            <Tooltip />
+          </PieChart>
         </ChartContainer>
       </CardContent>
     </Card>

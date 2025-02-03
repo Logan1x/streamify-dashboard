@@ -6,8 +6,8 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  ResponsiveContainer,
   Cell,
+  CartesianGrid,
 } from "recharts";
 import { ChartContainer, ChartConfig } from "@/components/ui/chart";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
@@ -53,31 +53,33 @@ const TopStreamedSongs: React.FC = () => {
   }
 
   return (
-    <Card>
+    <Card className="lg:m-4">
       <CardHeader>
         <CardTitle>Top 5 Streamed Songs (Last 30 Days)</CardTitle>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig} className="min-h-[300px] w-full">
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={data} layout="vertical" margin={{ left: 50 }}>
-              <XAxis type="number" />
-              <YAxis dataKey="songName" type="category" />
-              <Tooltip />
-              <Bar
-                dataKey="streamCount"
-                fill="var(--color-streamCount)"
-                radius={4}
-              >
-                {data.map((entry, index) => (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={COLORS[index % COLORS.length]}
-                  />
-                ))}
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
+        <ChartContainer
+          config={chartConfig}
+          className="h-[320px] min-h-[200px] w-full"
+        >
+          <BarChart data={data} layout="vertical" margin={{ left: 50 }}>
+            <CartesianGrid />
+            <XAxis type="number" />
+            <YAxis dataKey="songName" type="category" />
+            <Tooltip />
+            <Bar
+              dataKey="streamCount"
+              fill="var(--color-streamCount)"
+              radius={4}
+            >
+              {data.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
+              ))}
+            </Bar>
+          </BarChart>
         </ChartContainer>
       </CardContent>
     </Card>

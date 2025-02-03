@@ -7,10 +7,10 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-  TableCaption,
 } from "@/components/ui/table";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { ArrowUpDown } from "lucide-react";
 
 interface StreamData {
   songName: string;
@@ -101,40 +101,51 @@ const RecentStreamsTable: React.FC = () => {
         </div>
 
         <Table>
-          <TableCaption>Recent Streams Data</TableCaption>
           <TableHeader>
             <TableRow>
               <TableHead>
-                <button
+                <div
                   onClick={() => handleSort("songName")}
-                  className="text-left"
+                  className="text-left flex gap-1 items-center cursor-pointer"
                 >
-                  Song Name
-                </button>
+                  <span>Song Name</span>
+                  <span>
+                    <ArrowUpDown size={16} />
+                  </span>
+                </div>
               </TableHead>
               <TableHead>
-                <button
+                <div
                   onClick={() => handleSort("artist")}
-                  className="text-left"
+                  className="text-left flex gap-1 items-center cursor-pointer"
                 >
-                  Artist
-                </button>
+                  <span>Artist</span>
+                  <span>
+                    <ArrowUpDown size={16} />
+                  </span>
+                </div>
               </TableHead>
               <TableHead>
-                <button
+                <div
                   onClick={() => handleSort("dateStreamed")}
-                  className="text-left"
+                  className="text-left flex gap-1 items-center cursor-pointer"
                 >
-                  Date Streamed
-                </button>
+                  <span>Date Streamed</span>
+                  <span>
+                    <ArrowUpDown size={16} />
+                  </span>
+                </div>
               </TableHead>
               <TableHead>
-                <button
+                <div
                   onClick={() => handleSort("streamCount")}
-                  className="text-left"
+                  className="text-left flex gap-1 items-center cursor-pointer"
                 >
-                  Stream Count
-                </button>
+                  <span>Stream Count</span>
+                  <span>
+                    <ArrowUpDown size={16} />
+                  </span>
+                </div>
               </TableHead>
               <TableHead>User ID</TableHead>
             </TableRow>
