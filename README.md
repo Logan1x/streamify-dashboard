@@ -1,50 +1,59 @@
-# React + TypeScript + Vite
+# Streamify : A music streaming analytics platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Local Installation
 
-Currently, two official plugins are available:
+1. Clone the repository
+2. Install the required packages using `npm install`
+3. Run the server using `npm run dev`
+4. Open the browser and go to `localhost:5173`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Error Boundary
+- Lazy loading of components
+- 12 month User Growth Analysis
+- Revenue distribution Analysis
+- Key metrics Analysis(Users, Revenue, Streams)
+- Top 5 songs Analysis
+- Recent streamed songs Analysis
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## File Structure
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+├── App.css
+├── App.tsx
+├── assets
+│ └── react.svg
+├── components
+│ ├── ErrorBoundary.tsx
+│ ├── KeyMetrics.tsx
+│ ├── RecentStreamsTable.tsx
+│ ├── RevenueDistribution.tsx
+│ ├── TopStreamedSongs.tsx
+│ ├── ui
+│ └── UserGrowthChart.tsx
+├── index.css
+├── lib
+│ └── utils.ts
+├── main.tsx
+├── services
+│ ├── apiService.ts
+│ └── mockData.ts
+└── vite-env.d.ts
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Technologies Used
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- React
+- TypeScript
+- Vite
+- Shadcn UI
+- recharts
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Demo
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/e48c3e6d99d246c98a19ff4415361fe8?sid=6fd4e2ca-318d-4222-9965-595184e6c457" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+## License
+
+MIT License

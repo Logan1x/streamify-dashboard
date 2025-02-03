@@ -12,15 +12,33 @@ interface RevenueSource {
 const chartConfig = {
   Subscriptions: {
     label: "Subscriptions",
-    color: "#34d399", // Green for Subscriptions
+    color: "#34d399",
   },
   Ads: {
     label: "Ads",
-    color: "#f87171", // Red for Ads
+    color: "#f87171",
+  },
+  Merchandise: {
+    label: "Merchandise Sales",
+    color: "#60a5fa",
+  },
+  ExclusiveContent: {
+    label: "Exclusive Content",
+    color: "#fbbf24",
+  },
+  EventPartnerships: {
+    label: "Event Partnerships",
+    color: "#a78bfa",
   },
 } satisfies ChartConfig;
 
-const COLORS = ["var(--color-Subscriptions)", "var(--color-Ads"];
+const COLORS = [
+  "var(--color-Subscriptions)",
+  "var(--color-Ads)",
+  "var(--color-Merchandise)",
+  "var(--color-ExclusiveContent)",
+  "var(--color-EventPartnerships)",
+];
 
 const RevenueDistribution: React.FC = () => {
   const [data, setData] = useState<RevenueSource[]>([]);

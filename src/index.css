@@ -37,6 +37,12 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --color-Subscriptions: #34d399;
+  --color-Ads: #f87171;
+  --color-Merchandise: #60a5fa;
+  --color-ExclusiveContent: #fbbf24;
+  --color-EventPartnerships: #a78bfa;
 }
 
 a {
